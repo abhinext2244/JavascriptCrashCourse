@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter your number" id="first">
+    <input type="text" placeholder="Enter your number" id="second"><br><br>
+    <button onclick="Add()">Add</button>
+    <button onclick="sub()">sub</button>
+    <button onclick="mul()">mul</button>
+    <button onclick="div()">div</button>
+</body>
+</html>
+<script>
+let first=document.getElementById("first")
+let second=document.getElementById("second")
+function Add(){
+   let v=Number(first.value)+Number(second.value)
+   alert(v)
+}
+function sub(){
+   let v=Number(first.value)-Number(second.value)
+   alert(v)
+}
+function mul(){
+   let v=Number(first.value)-Number(second.value)
+   alert(v)
+}
+function div(){
+   let v=Number(first.value)/Number(second.value)
+   alert(v)
+}
+</script>
