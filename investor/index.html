@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .invenstor-container img{
+            width:100%;
+            height:500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+          const investors = [
+      { name: "Sequoia Capital", 
+      imageSrc: "https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-12/investors_252241.png" },
+      // Add more investors as needed
+    ];
+    let container=document.getElementById("container")
+    investors.forEach((investor)=>{
+        let div=document.createElement("div")
+        div.className="invenstor-container"
+        const imageElement = document.createElement('img');
+        imageElement.src = investor.imageSrc;
+        imageElement.alt = investor.name;
+        div.append(imageElement)
+        container.append(div)
+    })
+    </script>
+</body>
+</html>
