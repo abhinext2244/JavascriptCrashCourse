@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #stopwatch {
+        width: 300px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      .timer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .sec {
+        padding: 3px;
+        font-size: 30px;
+      }
+      .milsec {
+        margin-top: 10px;
+        font-size: 20px;
+      }
+      .min {
+        padding: 3px;
+
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="stopwatch">
+        <div class="timer">
+          <div class="min"><span style="font-size: 20px;"></span></div>
+          <div class="sec">0<span style="font-size: 20px;">s</span></div>
+          <div class="milsec">00</div>
+        </div>
+        <div id="btn">
+          <button class="start">start</button>
+          <button class="Reset">Reset</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="index.js"></script>

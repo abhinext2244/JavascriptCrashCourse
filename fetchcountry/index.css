@@ -1,0 +1,19 @@
+#container {
+  width: 100vw;
+  height: 100vh;
+}
+.country {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.Cardcountry {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

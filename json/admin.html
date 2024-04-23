@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="productPage">ProductPage</button>
+        <form action="">
+            <input type="text" placeholder="enter your title">
+            <input type="text" placeholder="enter your price">
+            <input type="text" placeholder="enter your img url">
+            <input type="submit">
+        </form
+</body>
+</html>
+<script>
+    let form=document.querySelector("form")
+    function handleFormSubmit(event){
+       event.preventDefault()
+        let formvalues=event.target
+        console.log(formvalues)
+        let title=formvalues[0].value
+        let price=formvalues[1].value
+        let img=formvalues[2].value
+        const obj={
+            id: Math.random().toString(),
+            title,
+            price,
+            img
+        }
+        console.log(title,price,img)
+        console.log(obj)
+        console.log(JSON.stringify(obj))
+        fetch("http://localhost:3000/products",{
+            method:"POST",
+            header:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(obj)
+
+        })
+       alert("product has been added")
+    }
+   
+    form.addEventListener("submit",function(){
+        handleFormSubmit(event)
+    })
+    let productPage=document.querySelector(".productPage")
+    productPage.addEventListener("click",function(){
+        window.location.href="product.html"
+    })
+</script>

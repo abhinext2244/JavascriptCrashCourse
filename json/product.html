@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width:500px;
+            height:500px;
+        }
+        .card{
+            width:300px;
+            height:350px;
+            border:1px solid red;
+            /* margin:10px; */
+        }
+    </style>
+</head>
+<body>
+    <button class="adminPage">adminPage</button>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+    let getData=async (URL)=>{
+      let res= await fetch(URL)
+       let data=await res.json()
+       console.log(data)
+       showData(data)
+    }
+    let display=document.querySelector("#container")
+    let showData=(data)=>{
+        data.map((ele)=>{
+        let div=document.createElement("div")
+        div.className="card"
+        let title=document.createElement("h3")
+        let p=document.createElement("p")
+        let img=document.createElement("img")
+        let button=document.createElement("button")
+        img.src=ele.img
+        img.style.width="200px"
+        img.style.height="200px"
+        title.innerText=ele.title
+        p.innerText=ele.price
+        button.innerText="Delete"
+        button.addEventListener("click",function(){
+            handleDelete(ele.id)
+        })
+        div.append(img,title,p,button)
+         display.append(div)
+       })
+    }
+    getData("http://localhost:3000/products")
+    let adminPage=document.querySelector(".adminPage")
+     adminPage.addEventListener("click",function(){
+        window.location.href="admin.html"
+     })
+     function handleDelete(id){
+       fetch(`http://localhost:3000/products/${id}`,{
+        method:"DELETE",
+        header:{
+            "Content-Type":"application/json"
+        }
+    })
+    
+
+    }
+</script>
