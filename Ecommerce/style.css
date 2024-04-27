@@ -1,0 +1,49 @@
+.container{
+    width:100vw;
+    height:100vh;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+}
+.navbar a{
+    text-decoration: none;
+}
+h2{
+    text-align: center;
+}
+.login{
+    display:flex;
+    justify-content: center;
+}
+.sinup{
+    display:flex; 
+    justify-content: center;
+
+}
+.productCard{
+    display: flex;
+
+}
+.product{
+    width:250px;
+    height:300px;
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:1px solid red;
+}
+.form{
+    /* width:300px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:10px;
+}
+.username{
+    text-align: right;
+    font-size: 25px;
+    margin-right:50px;
+}
